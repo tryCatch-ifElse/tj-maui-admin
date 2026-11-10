@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TJ & MAUI STUDIO | Admin Access</title>
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+</head>
+<body>
+
+<div class="auth-container">
+
+    <div class="auth-brand">
+        <div class="brand-content">
+            <span class="brand-label">TJ & MAUI STUDIO</span>
+
+            <h1>Your Story,<br>Beautifully Invited.</h1>
+
+            <p>
+                Manage your clients, events, invitations,
+                and special moments in one place.
+            </p>
+
+            <div class="brand-footer">
+                DIGITAL INVITATION MANAGEMENT PLATFORM
+            </div>
+        </div>
+    </div>
+
+    <div class="auth-panel">
+
+        <div class="auth-header">
+            <div class="mobile-brand">TJ & MAUI STUDIO</div>
+            <span class="eyebrow">ADMINISTRATION PORTAL</span>
+        </div>
+
+        <!-- LOGIN -->
+
+        <form id="loginForm" class="auth-form">
+
+            <h2>Welcome back</h2>
+            <p class="form-description">
+                Sign in to access your workspace.
+            </p>
+
+            <div class="form-group">
+                <label>Email address</label>
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                    autocomplete="current-password"
+                    required
+                >
+            </div>
+
+            <div class="form-options">
+                <a href="#" id="forgotPassword">Forgot password?</a>
+            </div>
+
+            <button type="submit" id="loginButton">
+                Sign In
+            </button>
+
+            <p class="switch-form">
+                Don't have an account?
+                <a href="#" id="showSignup">Create account</a>
+            </p>
+
+        </form>
+
+        <!-- SIGN UP -->
+
+        <form id="signupForm" class="auth-form hidden">
+
+            <h2>Create account</h2>
+            <p class="form-description">
+                Register to access the management platform.
+            </p>
+
+            <div class="form-group">
+                <label>Display name</label>
+                <input
+                    type="text"
+                    id="signupName"
+                    placeholder="Your full name"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Username</label>
+                <input
+                    type="text"
+                    id="signupUsername"
+                    placeholder="Choose a username"
+                    minlength="3"
+                    maxlength="50"
+                    pattern="[A-Za-z0-9_]+"
+                    autocomplete="username"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Email address</label>
+                <input
+                    type="email"
+                    id="signupEmail"
+                    placeholder="you@example.com"
+                    autocomplete="email"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>User level</label>
+
+                <select id="signupUserlevel" required>
+                    <option value="staff">Staff</option>
+                    <option value="client">Client</option>
+                </select>
+
+                <small>
+                    New accounts require owner approval.
+                </small>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input
+                    type="password"
+                    id="signupPassword"
+                    placeholder="Minimum 8 characters"
+                    minlength="8"
+                    autocomplete="new-password"
+                    required
+                >
+            </div>
+
+            <div class="form-group">
+                <label>Confirm password</label>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Re-enter your password"
+                    minlength="8"
+                    autocomplete="new-password"
+                    required
+                >
+            </div>
+
+            <button type="submit" id="signupButton">
+                Create Account
+            </button>
+
+            <p class="switch-form">
+                Already have an account?
+                <a href="#" id="showLogin">Sign in</a>
+            </p>
+
+        </form>
+
+        <div id="message" class="message hidden"></div>
+
+        <div class="auth-copyright">
+            © 2026 TJ & MAUI STUDIO
+        </div>
+
+    </div>
+
+</div>
+
+<script src="js/supabase.js"></script>
+<script src="js/auth.js"></script>
+
+</body>
+</html>

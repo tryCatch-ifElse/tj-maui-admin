@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Alexandra and Sebastian's wedding invitation — December 12, 2026.">
+  <title>Alexandra & Sebastian | Wedding Invitation</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory: #f8f5ef; --paper: #fffdf9; --ink: #55483d;
+      --muted: #8c7b6b; --gold: #ad8c65; --line: #e7ded2;
+      --sage: #7c8974;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { margin: 0; background: var(--ivory); color: var(--ink); font-family: "DM Sans", sans-serif; font-weight: 300; }
+    a { color: inherit; }
+    .hero {
+      min-height: 92vh; display: grid; place-items: center; text-align: center;
+      padding: 72px 22px; position: relative; overflow: hidden;
+      background: linear-gradient(180deg, rgba(34,29,25,.25), rgba(34,29,25,.52)),
+        url("https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=2200&q=85") center/cover;
+      color: #fffaf2;
+    }
+    .hero:after { content:""; position:absolute; inset:18px; border:1px solid rgba(255,250,242,.55); pointer-events:none; }
+    .hero-inner { position:relative; z-index:1; max-width:850px; }
+    .eyebrow { text-transform:uppercase; letter-spacing:.28em; font-size:.7rem; }
+    h1,h2,h3 { font-family:"Cormorant Garamond", Georgia, serif; font-weight:400; }
+    .hero h1 { font-size:clamp(4rem, 11vw, 8.5rem); line-height:.86; margin:28px 0; }
+    .amp { color:#e6d2b8; font-style:italic; }
+    .hero-date { letter-spacing:.22em; text-transform:uppercase; font-size:.8rem; margin-top:36px; }
+    .hero-note { font-family:"Cormorant Garamond",serif; font-size:1.45rem; font-style:italic; }
+    nav { display:flex; justify-content:center; flex-wrap:wrap; gap:26px; padding:20px; background:var(--paper); border-bottom:1px solid var(--line); }
+    nav a { text-decoration:none; text-transform:uppercase; letter-spacing:.15em; font-size:.68rem; }
+    section { padding:88px 22px; }
+    .container { max-width:980px; margin:auto; }
+    .center { text-align:center; }
+    .kicker { color:var(--gold); letter-spacing:.25em; text-transform:uppercase; font-size:.68rem; font-weight:500; }
+    h2 { font-size:clamp(2.5rem, 6vw, 4.2rem); margin:12px 0 18px; }
+    .intro { max-width:650px; margin:0 auto; color:var(--muted); line-height:1.9; font-size:.95rem; }
+    .rule { width:54px; height:1px; background:var(--gold); margin:28px auto; }
+    .details { background:var(--paper); }
+    .detail-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:18px; margin-top:42px; }
+    .detail-card { padding:34px 24px; border:1px solid var(--line); text-align:center; background:#fffefa; }
+    .detail-card h3 { font-size:2rem; margin:10px 0; }
+    .detail-card p { color:var(--muted); line-height:1.8; font-size:.9rem; margin:4px 0; }
+    .detail-icon { font-size:1.35rem; color:var(--gold); }
+    .story { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+    .story img { width:100%; height:480px; object-fit:cover; }
+    .story-copy p { color:var(--muted); line-height:1.95; }
+    .palette { display:flex; justify-content:center; gap:14px; margin:30px 0 12px; flex-wrap:wrap; }
+    .swatch { width:68px; height:68px; border-radius:50%; border:4px solid var(--paper); box-shadow:0 0 0 1px var(--line); }
+    .palette-labels { display:flex; justify-content:center; gap:22px; flex-wrap:wrap; color:var(--muted); font-size:.75rem; }
+    .entourage { background:var(--paper); }
+    .people-grid { display:grid; grid-template-columns:repeat(2,1fr); gap:28px; max-width:700px; margin:40px auto 0; }
+    .people-grid h3 { font-size:1.8rem; margin-bottom:8px; }
+    .people-grid p { color:var(--muted); line-height:1.9; font-size:.9rem; }
+    .rsvp { background:#eae4da; }
+    .rsvp-box { max-width:650px; margin:auto; background:var(--paper); padding:42px; }
+    form { display:grid; gap:15px; margin-top:28px; }
+    label { font-size:.78rem; letter-spacing:.05em; color:var(--muted); }
+    input,select,textarea { width:100%; margin-top:7px; border:1px solid var(--line); background:#fff; padding:13px 14px; font:inherit; color:var(--ink); border-radius:0; }
+    textarea { min-height:100px; resize:vertical; }
+    button { border:0; background:var(--ink); color:white; padding:15px 24px; text-transform:uppercase; letter-spacing:.15em; font:500 .72rem "DM Sans",sans-serif; cursor:pointer; }
+    #rsvp-message { color:var(--sage); font-size:.9rem; min-height:1.2em; }
+    footer { padding:48px 20px; text-align:center; background:#51473e; color:#f8f1e7; }
+    footer h2 { font-size:2.7rem; margin:0 0 8px; }
+    footer p { color:#d8cabb; font-size:.75rem; letter-spacing:.16em; text-transform:uppercase; }
+    @media(max-width:680px) {
+      .detail-grid,.story,.people-grid { grid-template-columns:1fr; }
+      section { padding:65px 20px; }
+      .story img { height:350px; }
+      .rsvp-box { padding:28px 20px; }
+      nav { gap:14px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="hero" id="home">
+    <div class="hero-inner">
+      <div class="eyebrow">Together with their families</div>
+      <h1>Alexandra <span class="amp">&</span><br>Sebastian</h1>
+      <div class="hero-note">joyfully invite you to celebrate their wedding</div>
+      <div class="hero-date">Saturday · December 12, 2026 · 3:00 PM</div>
+    </div>
+  </header>
+
+  <nav aria-label="Main navigation">
+    <a href="#story">Our Story</a><a href="#details">The Day</a><a href="#entourage">Entourage</a><a href="#rsvp">RSVP</a>
+  </nav>
+
+  <main>
+    <section id="story">
+      <div class="container story">
+        <img src="https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=1200&q=85" alt="Romantic wedding celebration">
+        <div class="story-copy">
+          <div class="kicker">A day to remember</div>
+          <h2>Two hearts,<br>one beautiful story.</h2>
+          <p>Some things are simply meant to be. What began as a chance meeting grew into a love filled with laughter, friendship, and countless little moments. Now, we're beginning our greatest adventure yet.</p>
+          <p>We would be honored to have you with us as we say “I do” and celebrate the beginning of our forever.</p>
+          <div class="rule" style="margin-left:0"></div>
+          <p><em>With love, Alexandra & Sebastian</em></p>
+        </div>
+      </div>
+    </section>
+
+    <section class="details center" id="details">
+      <div class="container">
+        <div class="kicker">Save the date</div>
+        <h2>The Wedding Day</h2>
+        <p class="intro">Please join us for a day of love, meaningful moments, and joyful celebration.</p>
+        <div class="detail-grid">
+          <article class="detail-card">
+            <div class="detail-icon">✦</div><div class="kicker">Ceremony</div>
+            <h3>3:00 in the afternoon</h3>
+            <p><strong>The Glass Garden</strong></p><p>Pasig City, Philippines</p>
+          </article>
+          <article class="detail-card">
+            <div class="detail-icon">✦</div><div class="kicker">Reception</div>
+            <h3>5:00 in the evening</h3>
+            <p><strong>The Glass Garden</strong></p><p>Dinner, music, and celebration</p>
+          </article>
+        </div>
+        <div style="margin-top:52px">
+          <div class="kicker">Attire</div><h3 style="font-size:2.2rem;margin:8px">Formal · Garden Elegance</h3>
+          <p class="intro">We invite our guests to wear formal attire in champagne, beige, mocha, or earth tones.</p>
+          <div class="palette">
+            <span class="swatch" style="background:#e8d9c5"></span><span class="swatch" style="background:#c5ad91"></span>
+            <span class="swatch" style="background:#9a8069"></span><span class="swatch" style="background:#7b7964"></span>
+            <span class="swatch" style="background:#f4eee4"></span>
+          </div>
+          <div class="palette-labels"><span>Champagne</span><span>Beige</span><span>Mocha</span><span>Sage</span><span>Ivory</span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="entourage center" id="entourage">
+      <div class="container">
+        <div class="kicker">Our favorite people</div><h2>Wedding Entourage</h2>
+        <p class="intro">With grateful hearts, we are blessed to be surrounded by the people who have supported and loved us throughout our journey.</p>
+        <div class="people-grid">
+          <div><h3>Principal Sponsors</h3><p>Mr. & Mrs. Sample Sponsor<br>Mr. & Mrs. Sample Sponsor<br>Mr. & Mrs. Sample Sponsor</p></div>
+          <div><h3>Best Man & Maid of Honor</h3><p>Daniel Reyes<br>Isabella Cruz</p></div>
+          <div><h3>Groomsmen</h3><p>Michael · James · Ethan</p></div>
+          <div><h3>Bridesmaids</h3><p>Sofia · Olivia · Mia</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="rsvp center" id="rsvp">
+      <div class="rsvp-box">
+        <div class="kicker">Kindly respond</div><h2>Will you join us?</h2>
+        <p class="intro">Please let us know if you can celebrate with us on or before November 20, 2026.</p>
+        <form id="rsvp-form">
+          <label>Full name<input name="name" required placeholder="Your full name"></label>
+          <label>Email address<input name="email" type="email" placeholder="you@example.com"></label>
+          <label>Will you be attending?
+            <select name="attendance" required><option value="">Please select</option><option>Joyfully accepts</option><option>Regretfully declines</option></select>
+          </label>
+          <label>Number of guests<input name="guests" type="number" min="1" max="10" value="1" required></label>
+          <label>Message for the couple<textarea name="message" placeholder="Write a little note (optional)"></textarea></label>
+          <button type="submit">Send RSVP</button>
+          <p id="rsvp-message" role="status"></p>
+        </form>
+        <p style="font-size:.72rem;color:#9a8b7d;margin-top:16px">Sample form only — connect this form to your database or RSVP service before publishing.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <h2>Alexandra <span style="color:#d8bd9b">&</span> Sebastian</h2>
+    <p>December 12, 2026 · Our forever begins</p>
+    <p style="letter-spacing:.05em;text-transform:none">#AlexAndSebSayIDo</p>
+  </footer>
+  <script>
+    document.getElementById("rsvp-form").addEventListener("submit", function (event) {
+      event.preventDefault();
+      document.getElementById("rsvp-message").textContent =
+        "Thank you! This is a preview RSVP; no response has been saved.";
+    });
+  </script>
+</body>
+</html>
